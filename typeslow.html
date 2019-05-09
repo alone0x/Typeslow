@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="run()">
+<p>Type anthing Slowy
+</p>
+<textarea id="ts"></textarea>
+<script>
+    let mang = ["tôi ", "là ", "một ", "đứa ", "khôn "];
+    let x = "";
+    let i = 0;
+
+    function viet(evt) {
+
+        if (evt.keyCode !== 0) {
+            x += mang[i];
+
+            i++;
+            if (i > mang.length) {
+                i = 0;
+                x = "";
+            }
+
+            console.log(x);
+            console.log(mang.length);
+            document.getElementById("ts").value = x;
+        }
+
+    }
+
+
+    function run() {
+        window.addEventListener('keydown', viet);
+
+    }
+
+</script>
+</body>
+</html>
